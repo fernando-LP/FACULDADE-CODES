@@ -176,7 +176,6 @@ int idade = 25;
 ```bash
 📦 Lista de Tokens e Lexemas:
 Token: TIPO_VARIAVEL        | Lexema: "int"
-Token: IDENTIFICADOR        | Lexema: "idade"
 Token: OPERADOR_ATRIBUICAO  | Lexema: "="
 Token: NUMERO_INTEIRO       | Lexema: "25"
 Token: PONTUACAO            | Lexema: ";"
@@ -192,7 +191,6 @@ int idade = 25;
 ```bash
 📦 Lista de Tokens e Lexemas:
 Token: TIPO_VARIAVEL        | Lexema: "int"
-Token: IDENTIFICADOR        | Lexema: "idade"
 Token: OPERADOR_ATRIBUICAO  | Lexema: "="
 Token: NUMERO_INTEIRO       | Lexema: "25"
 Token: PONTUACAO            | Lexema: ";"
@@ -211,13 +209,11 @@ int = @err
 ```bash
 📦 Lista de Tokens e Lexemas:
 Token: TIPO_VARIAVEL        | Lexema: "int"
-Token: IDENTIFICADOR        | Lexema: "idade"
 Token: OPERADOR_ATRIBUICAO  | Lexema: "="
 Token: NUMERO_INTEIRO       | Lexema: "25"
 Token: PONTUACAO            | Lexema: ";"
 Token: TIPO_VARIAVEL        | Lexema: "int"
 Token: OPERADOR_ATRIBUICAO  | Lexema: "="
-Token: IDENTIFICADOR        | Lexema: "err"
 
 🔠 Tabela de Símbolos (Identificadores):
 Lexema: "idade"
