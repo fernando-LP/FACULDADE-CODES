@@ -82,5 +82,18 @@ module.exports = [
 
 ![IMAGEM_AFD](imagem_afd_trabalho.png)
 
+* Construir a tabela de transição.
+Visualizar na planilha: https://docs.google.com/spreadsheets/d/1lkrvw9o-rDlzRAIaGbr0qKTpUZ5V__Qa17AuPT_wkXY/edit?gid=604490879#gid=604490879
+
+
+----
+
+1.2.2 Implementação do AL do mini compilador: 20% da A3
+
+* Utilizar: Desvios condicionais; ou tabela de transição; ou Lex/Flex para gerar o
+analisador léxico de forma automatizada
+
+
+
 
 
