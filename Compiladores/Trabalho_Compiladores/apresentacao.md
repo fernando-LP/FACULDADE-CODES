@@ -33,11 +33,11 @@ int, float, char
 
 
 **Operadores Lógicos**
-| Operador | Token    | Descrição            |          |                |
-| -------- | -------- | -------------------- | -------- | -------------- |
-| `&&`     | `LOGICO` | E lógico (AND)       |          |                |
-| \`       |          | \`                   | `LOGICO` | OU lógico (OR) |
-| `!`      | `LOGICO` | Negação lógica (NOT) |          |                |
+| Operador | Token    | Descrição            |
+| -------- | -------- | -------------------- |
+| `&&`     | `LOGICO` | E lógico (AND)       |
+| `||`     | `LOGICO` | OU lógico (OR)       |
+| `!`      | `LOGICO` | Negação lógica (NOT) |
 
 **Delimitadores e Pontuação**
 | Símbolo | Token         | Descrição          |
