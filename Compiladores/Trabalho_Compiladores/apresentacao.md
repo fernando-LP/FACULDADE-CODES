@@ -102,6 +102,9 @@ function tokenize(code) {
   const resultado = [];
   let line = 1;
 
+  // Normaliza quebras de linha (compatível com Linux, macOS, Windows)
+  code = code.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+
   while (code.length > 0) {
     let matched = false;
 
@@ -127,7 +130,6 @@ function tokenize(code) {
     }
 
     if (!matched) {
-      console.error(`Erro léxico na linha ${line}: '${code[0]}'`);
       resultado.push({
         type: "LEXICAL_ERROR",
         value: code[0],
