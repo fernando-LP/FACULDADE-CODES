@@ -246,10 +246,12 @@ int idade = 25;
 **Resultado**
 ```bash
 📦 Lista de Tokens e Lexemas:
-Token: TIPO_VARIAVEL        | Lexema: "int"
-Token: OPERADOR_ATRIBUICAO  | Lexema: "="
-Token: NUMERO_INTEIRO       | Lexema: "25"
-Token: PONTUACAO            | Lexema: ";"
+Token: TIPO_INTEIRO         | Lexema: "int"
+Token: ATRIBUICAO           | Lexema: "="
+Token: NUM_INTEIRO          | Lexema: "25"
+Token: PONTOVIRGULA         | Lexema: ";"
+Token: TIPO_INTEIRO         | Lexema: "int"
+Token: ATRIBUICAO           | Lexema: "="
 ```
 
 c) Os lexemas (identificadores, métodos, funções, classes) listados na tabela de símbolos devem ser
