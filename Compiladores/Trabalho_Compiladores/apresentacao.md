@@ -1,4 +1,4 @@
-# Apresentação parte 1 projeto - Compiladores
+  # Apresentação parte 1 projeto - Compiladores
 
 ## Tokens que devem ser considerados na análise léxica
 * Definir e descrever os tokens que serão atendidos na Linguagem;
@@ -15,39 +15,39 @@ int, float, char
 **Operadores Aritiméticos**
 | Operador | Token        | Descrição                 |
 | -------- | ------------ | ------------------------- |
-| `+`      | `ARITMETICO` | Soma                      |
-| `-`      | `ARITMETICO` | Subtração                 |
-| `*`      | `ARITMETICO` | Multiplicação             |
-| `/`      | `ARITMETICO` | Divisão                   |
-| `%`      | `ARITMETICO` | Módulo (resto da divisão) |
+| `+`      | `MAIS      ` | Soma                      |
+| `-`      | `MENOS     ` | Subtração                 |
+| `*`      | `MULT      ` | Multiplicação             |
+| `/`      | `DIV      `  | Divisão                   |
+| `%`      | `MOD       ` | Módulo (resto da divisão) |
 
 **Operadores Relacionais**
 | Operador | Token        | Descrição        |
 | -------- | ------------ | ---------------- |
-| `==`     | `RELACIONAL` | Igual a          |
-| `!=`     | `RELACIONAL` | Diferente de     |
-| `<`      | `RELACIONAL` | Menor que        |
-| `<=`     | `RELACIONAL` | Menor ou igual a |
-| `>`      | `RELACIONAL` | Maior que        |
-| `>=`     | `RELACIONAL` | Maior ou igual a |
+| `==`     | `IGUAL     ` | Igual a          |
+| `!=`     | `DIFERENTE ` | Diferente de     |
+| `<`      | `MENOR     ` | Menor que        |
+| `<=`     | `MENOR_IGUAL`| Menor ou igual a |
+| `>`      | `MAIOR`      | Maior que        |
+| `>=`     | `MAIOR_IGUAL`| Maior ou igual a |
 
 
 **Operadores Lógicos**
 | Operador | Token    | Descrição            |
 | -------- | -------- | -------------------- |
-| `&&`     | `LOGICO` | E lógico (AND)       |
-| `||`     | `LOGICO` | OU lógico (OR)       |
-| `!`      | `LOGICO` | Negação lógica (NOT) |
+| `&&`     | `E_LOGICO` | E lógico (AND)       |
+| `||`     | `OU_LOGICO`| OU lógico (OR)       |
+| `!`      | `NAO_LOGICO`| Negação lógica (NOT) |
 
 **Delimitadores e Pontuação**
 | Símbolo | Token         | Descrição          |
 | ------- | ------------- | ------------------ |
-| `(`     | `DELIMITADOR` | Parêntese esquerdo |
-| `)`     | `DELIMITADOR` | Parêntese direito  |
-| `{`     | `DELIMITADOR` | Chave esquerda     |
-| `}`     | `DELIMITADOR` | Chave direita      |
-| `;`     | `DELIMITADOR` | Ponto e vírgula    |
-| `,`     | `DELIMITADOR` | Vírgula            |
+| `(`     | `PARENTESE_ABRE` | Parêntese esquerdo |
+| `)`     | `PARENTESE_FECHA` | Parêntese direito  |
+| `{`     | `CHAVE_ABRE` | Chave esquerda     |
+| `}`     | `CHAVE_FECHA` | Chave direita      |
+| `;`     | `PONTOVIRGULA` | Ponto e vírgula    |
+| `,`     | `VIRGULA` | Vírgula            |
 
 **Comentários**
 | Tipo        | Token              | Exemplo            | Regex                 |
