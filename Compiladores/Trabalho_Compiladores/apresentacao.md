@@ -56,7 +56,9 @@ int, float, char
 | Bloco       | `COMENTARIO_BLOCO` | `/* comentário */` | `/^\/\*[\s\S]*?\*\//` |
 
   
-* Especificar os tokens da linguagem usando as expressões regulares; 
+* Especificar os tokens da linguagem usando as expressões regulares;
+
+  _Essa era a primeira versão_
 ```node
 module.exports = [
   { type: "STRING_LITERAL",       regex: /^"[^"\n]*"/ },
@@ -79,6 +81,75 @@ module.exports = [
 ];
 
 ```
+_Versão com correção_
+```node
+module.exports = [
+  //comentarios
+  { type: "LITERAL_CADEIA",     regex: /^"[^"\n]*"/ },
+  { type: "COMENTARIO_LINHA",   regex: /^\/\/.*"/ },
+  { type: "COMENTARIO_BLOCO",   regex: /^\/\*[\s\S]*?\*\// },
+
+  // Palavras reservadas
+  { type: "RETORNO",            regex: /^return\b/ },
+  { type: "PARA",               regex: /^for\b/ },
+  { type: "ENQUANTO",           regex: /^while\b/ },
+  { type: "FACA",               regex: /^do\b/ },
+  { type: "SE",                 regex: /^if\b/ },
+  { type: "SENAO",              regex: /^else\b/ },
+
+  // Tipos
+  { type: "TIPO_INTEIRO",       regex: /^int\b/ },
+  { type: "TIPO_FLUTUANTE",     regex: /^float\b/ },
+  { type: "TIPO_CHAR",          regex: /^char\b/ },
+  { type: "TIPO_BOOL",          regex: /^bool\b/ },
+
+  // Numeros
+  { type: "NUM_FLUTUANTE",      regex: /^[0-9]+\.[0-9]+/ },
+  { type: "NUM_INTEIRO",        regex: /^[0-9]+/ },
+
+  // Operadores relacionais
+  { type: "MENOR_IGUAL",        regex: /^<=/ },
+  { type: "MAIOR_IGUAL",        regex: /^>=/ },
+  { type: "IGUAL",              regex: /^==/ },
+  { type: "DIFERENTE",          regex: /^!=/ },
+  { type: "MENOR",              regex: /^</ },
+  { type: "MAIOR",              regex: /^>/ },
+
+  // Operadores logicos
+  { type: "E_LOGICO",           regex: /^&&/ },
+  { type: "OU_LOGICO",          regex: /^\|\|/ },
+  { type: "NAO_LOGICO",         regex: /^!/ },
+
+  // Operadores aritmeticos
+  { type: "MAIS",               regex: /^\+/ },
+  { type: "MENOS",              regex: /^\-/ },
+  { type: "MULT",               regex: /^\*/ },
+  { type: "DIV",                regex: /^\// },
+  { type: "MOD",                regex: /^%/ },
+
+  // Atribuicao
+  { type: "ATRIBUICAO",         regex: /^=/ },
+
+  { type: "PARENTESE_ABRE",     regex: /^\(/ },
+  { type: "PARENTESE_FECHA",    regex: /^\)/ },
+  { type: "CHAVE_ABRE",         regex: /^\{/ },
+  { type: "CHAVE_FECHA",        regex: /^\}/ },
+  { type: "VIRGULA",            regex: /^,/ },
+  { type: "PONTOVIRGULA",       regex: /^;/ },
+  { type: "PONTO",              regex: /^\./ },
+  { type: "DOIS_PONTOS",        regex: /^:/ },
+
+  // palavras
+  { type: "IDENTIFICADOR",      regex: /^[a-zA-Z_][a-zA-Z0-9_]*/ },
+
+  // Ignorados
+  { type: "QUEBRA_LINHA",       regex: /^\n/,    ignore: true },
+  { type: "ESPACO",             regex: /^[ \t\r]+/, ignore: true },
+];
+
+```
+
+
 * Apresentar o reconhecimento dos tokens da linguagem por meio de AFD;
 
 ![IMAGEM_AFD](imagem_afd_trabalho.png)
@@ -190,10 +261,12 @@ int idade = 25;
 **Resultado**
 ```bash
 📦 Lista de Tokens e Lexemas:
-Token: TIPO_VARIAVEL        | Lexema: "int"
-Token: OPERADOR_ATRIBUICAO  | Lexema: "="
-Token: NUMERO_INTEIRO       | Lexema: "25"
-Token: PONTUACAO            | Lexema: ";"
+Token: TIPO_INTEIRO         | Lexema: "int"
+Token: ATRIBUICAO           | Lexema: "="
+Token: NUM_INTEIRO          | Lexema: "25"
+Token: PONTOVIRGULA         | Lexema: ";"
+Token: TIPO_INTEIRO         | Lexema: "int"
+Token: ATRIBUICAO           | Lexema: "="
 
 🔠 Tabela de Símbolos (Identificadores):
 Lexema: "idade"
@@ -208,17 +281,17 @@ int = @err
 **Resultado**
 ```bash
 📦 Lista de Tokens e Lexemas:
-Token: TIPO_VARIAVEL        | Lexema: "int"
-Token: OPERADOR_ATRIBUICAO  | Lexema: "="
-Token: NUMERO_INTEIRO       | Lexema: "25"
-Token: PONTUACAO            | Lexema: ";"
-Token: TIPO_VARIAVEL        | Lexema: "int"
-Token: OPERADOR_ATRIBUICAO  | Lexema: "="
+Token: TIPO_INTEIRO         | Lexema: "int"
+Token: ATRIBUICAO           | Lexema: "="
+Token: NUM_INTEIRO          | Lexema: "25"
+Token: PONTOVIRGULA         | Lexema: ";"
+Token: TIPO_INTEIRO         | Lexema: "int"
+Token: ATRIBUICAO           | Lexema: "="
 
 🔠 Tabela de Símbolos (Identificadores):
 Lexema: "idade"
 Lexema: "err"
 
 ❌ Relatório de Erros Léxicos:
-Lexema inválido: '@'
+Linha 2: lexema inválido '@'
 ```
